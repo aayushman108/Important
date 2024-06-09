@@ -1,31 +1,30 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import "../styles/home.scss";
+import "../../styles/contact.scss";
 
-export default function Home() {
+export default function ContactPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
-  const [direction, setDirection] = useState("ltr");
-  const itemsPerSlide = 3;
-  const itemCount = 8; // Total number of items
+  console.log(currentIndex, "current");
 
-  useEffect(() => {
-    currentIndex > 0 && setPrevIndex(currentIndex);
-    prevIndex !== null &&
-      setDirection(currentIndex > prevIndex ? "ltr" : "rtl");
-  }, [currentIndex, prevIndex]);
+  const itemsPerSlide = 6.5; //Items per slide
+  const gap = 1; //In rem
+
+  const itemCount = 20; //Item count
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? itemCount - itemsPerSlide : prevIndex - 1
+      prevIndex === 0 ? prevIndex : prevIndex - 1
     );
+    setPrevIndex(currentIndex);
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === itemCount - itemsPerSlide ? prevIndex : prevIndex + 1
     );
+    setPrevIndex(currentIndex);
   };
 
   const getTransformStyle = () => {
@@ -44,9 +43,9 @@ export default function Home() {
 
   return (
     <>
-      <main className="home">
+      <main className="contact">
         <div
-          className={`home__main ${direction}`}
+          className={`contact__main`}
           style={getTransformStyle()}
           {...swipeHandlers}
         >
@@ -58,19 +57,26 @@ export default function Home() {
                   ? "active"
                   : ""
               }`}
-              style={{ width: `${100 / itemsPerSlide}%` }}
+              style={{
+                padding: `0 ${gap / 2}rem`,
+                maxWidth: `${100 / itemsPerSlide}%`,
+                flexBasis: `${100 / itemsPerSlide}%`,
+                aspectRatio: 1,
+              }}
             >
               <div className="inner">Item {index + 1}</div>
             </div>
           ))}
         </div>
       </main>
+
+      {/* BUTTONS */}
       <button onClick={handlePrev} disabled={currentIndex === 0}>
         Prev
       </button>
       <button
         onClick={handleNext}
-        disabled={currentIndex === itemCount - itemsPerSlide}
+        disabled={currentIndex > itemCount - itemsPerSlide}
       >
         Next
       </button>
