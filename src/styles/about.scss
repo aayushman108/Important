@@ -1,0 +1,28 @@
+.about-page {
+  color: lighten(black, 25%);
+  .pagination-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .pagination {
+      display: flex;
+      &-item {
+        outline: none;
+        border: none;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:disabled {
+          color: lighten(black, 50%);
+        }
+        &.active {
+          background-color: #ed1b24;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -5,26 +5,42 @@ import "../../styles/contact.scss";
 
 export default function ContactPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState<number | null>(null);
-  console.log(currentIndex, "current");
+  const [autoSlide, setAutoSlide] = useState<boolean>(true);
 
   const itemsPerSlide = 6.5; //Items per slide
   const gap = 1; //In rem
+  const itemsToSlide = 2;
 
   const itemCount = 20; //Item count
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? prevIndex : prevIndex - 1
+      prevIndex === 0
+        ? prevIndex
+        : prevIndex - itemsToSlide <= 0
+        ? 0
+        : prevIndex - itemsToSlide
     );
-    setPrevIndex(currentIndex);
   };
 
   const handleNext = () => {
+    if (autoSlide) {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === itemCount - itemsPerSlide
+          ? 0
+          : prevIndex + itemsToSlide >= itemCount - itemsPerSlide
+          ? itemCount - itemsPerSlide
+          : prevIndex + itemsToSlide
+      );
+      return;
+    }
     setCurrentIndex((prevIndex) =>
-      prevIndex === itemCount - itemsPerSlide ? prevIndex : prevIndex + 1
+      prevIndex === itemCount - itemsPerSlide
+        ? prevIndex
+        : prevIndex + itemsToSlide >= itemCount - itemsPerSlide
+        ? itemCount - itemsPerSlide
+        : prevIndex + itemsToSlide
     );
-    setPrevIndex(currentIndex);
   };
 
   const getTransformStyle = () => {
@@ -33,6 +49,15 @@ export default function ContactPage() {
       transform: `translateX(${translateValue}%)`,
     };
   };
+
+  useEffect(() => {
+    if (!autoSlide) return;
+    const interval = setInterval(() => {
+      handleNext();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [autoSlide]);
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => handleNext(),
@@ -43,7 +68,11 @@ export default function ContactPage() {
 
   return (
     <>
-      <main className="contact">
+      <main
+        className="contact"
+        onMouseEnter={() => setAutoSlide(false)}
+        onMouseLeave={() => setAutoSlide(true)}
+      >
         <div
           className={`contact__main`}
           style={getTransformStyle()}
@@ -71,12 +100,21 @@ export default function ContactPage() {
       </main>
 
       {/* BUTTONS */}
-      <button onClick={handlePrev} disabled={currentIndex === 0}>
+      <button
+        onClick={() => {
+          setAutoSlide(false);
+          handlePrev();
+        }}
+        disabled={currentIndex === 0}
+      >
         Prev
       </button>
       <button
-        onClick={handleNext}
-        disabled={currentIndex > itemCount - itemsPerSlide}
+        onClick={() => {
+          setAutoSlide(false);
+          handleNext();
+        }}
+        disabled={currentIndex === itemCount - itemsPerSlide}
       >
         Next
       </button>

@@ -1,5 +1,18 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import "../../../styles/about2.scss";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { SideNav } from "@/components/sideNav";
 
 export default function About2() {
-  return <div>Welcome to about 2</div>;
+  const [showSideNav, setShowSideNav] = useState<boolean>(false);
+  const handleHamburgerClick = () => {
+    setShowSideNav(!showSideNav);
+  };
+  return (
+    <div>
+      <SideNav show={showSideNav} setShow={setShowSideNav} />
+      <GiHamburgerMenu onClick={handleHamburgerClick} />
+    </div>
+  );
 }
