@@ -1,0 +1,38 @@
+.education-container {
+  color: #363636;
+  .education {
+    &-heading {
+      font-size: 2rem;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+    .divider {
+      width: 100%;
+      height: 4px;
+      background-color: #363636;
+      margin-bottom: 1rem;
+    }
+    &-course {
+      font-size: 1.5rem;
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+    &-institute {
+      font-size: 1.2rem;
+      margin: 0;
+      margin-bottom: 0.5rem;
+    }
+    &-date-location {
+      display: flex;
+      gap: 3rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      .education-date,
+      .education-location {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,36 +1,72 @@
 .cv-head-container {
+  color: #363636;
   width: 100%;
-  border: 1px solid green;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
   .cv-head {
-    border: 1px solid red;
     flex-basis: 40%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     &-name {
-      line-height: 1.25;
       margin: 0;
+      font-size: 3rem;
     }
     &-designation {
-      line-height: 1.5;
       margin: 0;
+      font-size: 1.5rem;
     }
     &-gmail-phone {
-      border: 1px solid blue;
       display: flex;
       justify-content: space-between;
+      font-weight: 600;
+      .cv-head-phone,
+      .cv-head-gmail {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
     }
     &-github-gitlab {
-      border: 1px solid blue;
       display: flex;
       justify-content: space-between;
+      font-weight: 600;
+      .cv-head-github {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .cv-head-gitlab {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+    &-location {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
   }
   .cv-image {
-    flex-basis: 18%;
-    border: 1px solid red;
     margin: 0;
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cotain;
+    }
   }
+}
+
+a {
+  text-decoration: none;
+  color: #363636;
 }
