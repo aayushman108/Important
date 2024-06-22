@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoChevronDownSharp } from "react-icons/io5";
 
-import "../../../styles/About1.scss";
+import "../../../styles/about1.scss";
 
 interface IAccordionItemProps {
   item: {
