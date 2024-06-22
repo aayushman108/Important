@@ -1,0 +1,15 @@
+.cv-page-container {
+  .cv-page {
+    display: flex;
+    justify-content: space-between;
+    &-left {
+      flex-basis: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    &-right {
+      flex-basis: 28%;
+    }
+  }
+}

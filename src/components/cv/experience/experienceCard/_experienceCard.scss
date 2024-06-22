@@ -1,0 +1,49 @@
+.experience-card-container {
+  color: #363636;
+  &:first-child {
+    border-bottom: 1px dashed #363636;
+    padding-bottom: 1rem;
+  }
+  .experience-card {
+    &-designation {
+      margin: 0;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    &-company {
+      margin: 0;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    &-date-location {
+      margin: 0;
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 0.5rem;
+      .experience-card-date {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      .experience-card-location {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+    }
+    &-link {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    &-list {
+      //   border: 1px solid blue;
+      padding: 0 1rem;
+      margin: 0;
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
