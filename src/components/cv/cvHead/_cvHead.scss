@@ -1,0 +1,36 @@
+.cv-head-container {
+  width: 100%;
+  border: 1px solid green;
+  display: flex;
+  justify-content: space-between;
+  .cv-head {
+    border: 1px solid red;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    &-name {
+      line-height: 1.25;
+      margin: 0;
+    }
+    &-designation {
+      line-height: 1.5;
+      margin: 0;
+    }
+    &-gmail-phone {
+      border: 1px solid blue;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-github-gitlab {
+      border: 1px solid blue;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .cv-image {
+    flex-basis: 18%;
+    border: 1px solid red;
+    margin: 0;
+  }
+}
