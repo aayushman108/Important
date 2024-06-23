@@ -13,7 +13,7 @@ interface Props {
     date: string;
     location: string;
     link: string;
-    content: { id: string; text: string }[];
+    content: { id: string; text: string; link?: string }[];
   };
 }
 export default function ExperienceCard(props: Props) {
@@ -40,7 +40,10 @@ export default function ExperienceCard(props: Props) {
         </Link>
         <ul className="experience-card-list">
           {props.item.content.map((item) => (
-            <li key={item.id}>{item.text}</li>
+            <li key={item.id}>
+              {item.text}{" "}
+              {item.link && <Link href={item.link}>~ {item.link}</Link>}
+            </li>
           ))}
         </ul>
       </div>

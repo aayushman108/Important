@@ -10,7 +10,10 @@ export function Skills() {
         <div className="divider"></div>
         <ul className="skills-list">
           {SKILLS.map((item) => (
-            <li key={item.id}>{item.skill}</li>
+            <li key={item.id}>
+              {item.icon}
+              {item.skill}
+            </li>
           ))}
         </ul>
       </div>

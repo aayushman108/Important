@@ -8,10 +8,11 @@ export function Summary() {
         <h2 className="summary-heading">SUMMARY</h2>
         <div className="summary-divider"></div>
         <p className="summary-content">
-          Passionate software engineer with 6 months of experience in web
-          application development. Proficient in JavaScript, TypeScript, React,
-          Next.js, and Reduxtoolkit. Also, experienced with technologies such as
-          Node.js, Express, and PostgreSQL.
+          Proficient Associate Frontend Developer with 8 months of experience in
+          web application development. Demonstrates strong capability in modern
+          frontend technologies, with a basic foundation in backend development.
+          Committed to continuous learning and applying cutting-edge
+          technologies to create efficient, user-friendly web interfaces.
         </p>
       </div>
     </div>

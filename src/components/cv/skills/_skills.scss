@@ -18,10 +18,12 @@
       padding: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 2rem;
       li {
         position: relative;
-        display: inline;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         font-weight: 600;
         &::after {
           content: "";
