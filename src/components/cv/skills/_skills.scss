@@ -1,5 +1,6 @@
 .skills-container {
   color: #363636;
+  font-size: 1.2rem;
   .skills {
     &-heading {
       font-size: 2rem;
@@ -21,7 +22,7 @@
       li {
         position: relative;
         display: inline;
-        font-weight: 500;
+        font-weight: 600;
         &::after {
           content: "";
           position: absolute;
