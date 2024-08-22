@@ -9,27 +9,45 @@ export const EXPERIENCE = [
     content: [
       {
         id: "1-1",
-        text: "Learned and applied React.js fundamentals, including React Router, Redux-toolkit, Next.js, Framer Motion",
+        title: "Collaborative and Independent UI Development",
+        scontent: [
+          {
+            subTitle: "",
+            subContent:
+              "Gained experience by working on various projects with a skilled UI team, which helped me learn a lot and improve my teamwork skills.",
+            link: "",
+          },
+          {
+            subTitle: "",
+            subContent:
+              "Demonstrated the ability to handle projects on my own, earning trust and getting opportunities for solo work.",
+            link: "",
+          },
+        ],
       },
       {
         id: "1-2",
-        text: "Contributed to 2 real-life dashboard projects, gaining practical experience in frontend development",
-      },
-      {
-        id: "1-3",
-        text: "Contributed in the development of 2 website projects, enhancing skills in web application creation",
-      },
-      {
-        id: "1-4",
-        text: "Collaborated with team members to implement features and resolve issues",
-      },
-      {
-        id: "1-5",
-        text: "Engaged in code reviews, contributing to the improvement of coding standards",
-      },
-      {
-        id: "1-6",
-        text: "Gained exposure to professional software development practices and workflows",
+        title: "Independently Developed UIs",
+        scontent: [
+          {
+            subTitle: "Dafinchi.ai",
+            subContent:
+              "Designed and developed the entire UI for an AI-powered application that extracts insights from financial documents. Utilized Next.js page router and Clerk for authentication. Visit Dafinchi.ai",
+            link: "",
+          },
+          {
+            subTitle: "Engineering Consultancy Website",
+            subContent:
+              "Created the complete UI using Next.js app router, integrated Leaflet for map features, and employed Recharts for data visualization. The website is soon to be deployed for public.",
+            link: "",
+          },
+          {
+            subTitle: "Adventure Website Dashboard",
+            subContent:
+              "Led the UI development for a dashboard project for an adventure website, scheduled for public domain deployment.",
+            link: "",
+          },
+        ],
       },
     ],
   },

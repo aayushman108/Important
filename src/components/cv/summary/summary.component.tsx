@@ -8,11 +8,11 @@ export function Summary() {
         <h2 className="summary-heading">SUMMARY</h2>
         <div className="summary-divider"></div>
         <p className="summary-content">
-          Proficient Associate Frontend Developer with 8 months of experience in
-          web application development. Demonstrates strong capability in modern
-          frontend technologies, with a basic foundation in backend development.
-          Committed to continuous learning and applying cutting-edge
-          technologies to create efficient, user-friendly web interfaces.
+          Passionate Software Developer with 1 year of experience in web
+          application development. I specialize in modern frontend technologies
+          and have a basic foundation in backend development. I am dedicated to
+          creating efficient and user-friendly web interfaces while continuously
+          learning and applying new technologies.
         </p>
       </div>
     </div>

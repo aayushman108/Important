@@ -5,6 +5,11 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaLink } from "react-icons/fa6";
 
+type IContent = {
+  subTitle: string;
+  subContent: string;
+  link: string;
+};
 interface Props {
   item: {
     id: number;
@@ -13,7 +18,13 @@ interface Props {
     date: string;
     location: string;
     link: string;
-    content: { id: string; text: string; link?: string }[];
+    content: {
+      id: string;
+      title?: string;
+      text?: string;
+      link?: string;
+      scontent?: IContent[];
+    }[];
   };
 }
 export default function ExperienceCard(props: Props) {
@@ -39,14 +50,30 @@ export default function ExperienceCard(props: Props) {
           {props.item.link}
         </Link>
         <ul className="experience-card-list">
-          {props.item.content.map((item) => (
-            <li key={item.id}>
-              {item.text}{" "}
-              {item.link && <Link href={item.link}>~ {item.link}</Link>}
-            </li>
-          ))}
+          {props.item.content.map((item) =>
+            item.title ? (
+              <li key={item.id}>
+                {item.text}{" "}
+                {item.link && <Link href={item.link}>~ {item.link}</Link>}
+              </li>
+            ) : (
+              <li key={item.id}>
+                <h3>{item.title}</h3>
+                <ul>
+                  {item?.scontent?.map((item) => (
+                    <li key={item.subTitle}>
+                      <strong>{`${item.subTitle}:`}</strong>
+                      {item.subContent}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            )
+          )}
         </ul>
       </div>
     </div>
   );
+}
+{
 }
