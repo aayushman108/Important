@@ -78,7 +78,7 @@ export function Experience() {
                       The website is soon to be deployed for public.
                     </li>
                     <li>
-                      <strong>Adventure Website Dashboard:</strong>Developed an
+                      <strong>Adventure Website Dashboard:</strong> Developed an
                       adventure website dashboard. Utilized React, Quill text
                       editor, and more.
                     </li>
