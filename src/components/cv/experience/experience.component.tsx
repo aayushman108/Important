@@ -64,7 +64,9 @@ export function Experience() {
                       an AI-powered application that extracts valuable insights
                       on statements, revenue, and risk from financial documents.
                       Utilized Next.js page router and Clerk for authentication.{" "}
-                      <Link href="https://dafinchi.ai">Visit Dafinchi.ai</Link>
+                      <Link target="_blank" href="https://dafinchi.ai">
+                        Visit Dafinchi.ai
+                      </Link>
                     </li>
                     <li>
                       <strong>Engineering Consultancy Website:</strong>{" "}
